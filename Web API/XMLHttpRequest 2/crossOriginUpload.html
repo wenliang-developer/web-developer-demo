@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<title>Upload Geolocation Data</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="http://apress.com/favicon.ico">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Geolocation Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="http://apress.com/favicon.ico">
+</head>
+<body>
 <script>
 
 function loadDemo() {
@@ -15,7 +20,7 @@ function loadDemo() {
         document.getElementById("support").innerHTML = "Your browser <strong>does</strong> support cross-origin XMLHttpRequest";
     }
 
-    var targetLocation = "http://geodata.example.net:9999/server.js";
+    var targetLocation = "http://geodata.example.net:9999/upload/server.js";
 
     function setProgress(s) {
         document.getElementById("progress").innerHTML = s;
@@ -27,11 +32,11 @@ function loadDemo() {
                 var ratio = e.loaded / e.total;
                 setProgress(ratio + "% uploaded");
             }
-			
-			xhr.onprogress = function(e) {
-				var ratio = e.loaded / e.total;
-				setProgress(ratio + "% downloaded");
-			}
+            
+            xhr.onprogress = function(e) {
+                var ratio = e.loaded / e.total;
+                setProgress(ratio + "% downloaded");
+            }
 
             xhr.onload = function(e) {
                 setProgress("finished");
@@ -42,7 +47,7 @@ function loadDemo() {
             }
 
             xhr.open("POST", targetLocation, true);
-			
+            console.log(xhr.withCredentials)
             geoDataString = dataElement.textContent;
             xhr.send(geoDataString);
         }, true);
@@ -69,4 +74,5 @@ geoData = [[39.080018000000003, 39.112557000000002, 39.135261, 39.150458, 39.170
 <p>
     <b>Status: </b> <span id="progress">ready</span>
 </p>
-
+</body>
+</html>

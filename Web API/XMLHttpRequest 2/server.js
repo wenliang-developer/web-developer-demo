@@ -10,10 +10,7 @@ function isMatchFileFormat(format){
 }
 
 app.get('/:filename.:format', function(req, res) {
-var filename = req.params.filename + '.' + req.params.format;
-		console.dir(req.get('Origin'))
-		res.set("Access-Control-Allow-Origin", "http://portal.example.com:9999")
-        //res.set("Access-Control-Allow-Methods", "POST")
+	var filename = req.params.filename + '.' + req.params.format;
 	if(isMatchFileFormat(req.params.format)){
 		res.sendfile(filename);
 	} else {
@@ -21,12 +18,11 @@ var filename = req.params.filename + '.' + req.params.format;
 	}
 });
 
-app.all('/upload/:server',function(req, res){
-	console.dir(req);
+app.all('/upload/server.js',function(req, res){
 	res.writeHead(200,{
 		"Access-Control-Allow-Origin":"http://portal.example.com:9999",
 		"Access-Control-Allow-Methods":"POST"
 	});
-	res.end('123', 200);
+	res.end('123');
 });
 app.listen(9999);

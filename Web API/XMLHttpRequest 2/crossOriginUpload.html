@@ -47,8 +47,8 @@ function loadDemo() {
             }
 
             xhr.open("POST", targetLocation, true);
-            console.log('click')
             geoDataString = dataElement.textContent;
+            console.dir(geoDataString);
             xhr.send(geoDataString);
         }, true);
 

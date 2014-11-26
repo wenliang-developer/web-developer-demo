@@ -1,4 +1,4 @@
-# XMLHttpRequest 2
+# Web Sockets
 [TOC]
 
 ## support:
@@ -22,28 +22,39 @@ Firefox for Android | 33+
 
 **WebSocket 升级握手**
 
-From client to server:
-> GET /demo HTTP/1.1
-Host: example.com
-Connection: Upgrade
-Sec-WebSocket-Key2: 12998 5 Y3 1 .P00
-Sec-WebSocket-Protocol: sample
-Upgrade: WebSocket
-Sec-WebSocket-Key1: 4@1 46546xW%0l 1 5
-Origin: http://example.com
+websocket 协议有多个版本，以最新版的 `RFC 6455` 为例。
 
-> [8-byte security key]
+From client to server:
+> GET / HTTP/1.1
+Upgrade: websocket
+Connection: Upgrade
+Host: example.com
+Origin: null
+Sec-WebSocket-Key: sN9cRrP/n9NdMgdcy2VJFQ==
+Sec-WebSocket-Version: 13
 
 From server to client:
-
-> HTTP/1.1 101 WebSocket Protocol Handshake
-Upgrade: WebSocket
+> HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
 Connection: Upgrade
-WebSocket-Origin: http://example.com
-WebSocket-Location: ws://example.com/demo
-WebSocket-Protocol: sample
+Sec-WebSocket-Accept: fFBooB7FAkLlXgRSz0BT3v4hq5s=
+Sec-WebSocket-Origin: null
+Sec-WebSocket-Location: ws://example.com/
 
-> [16-byte hash response]
+
+**Sec-WebSocket-Accept 生成原理**
+
+在请求中的“Sec-WebSocket-Key”是随机的，服务器端会用这些数据来构造出一个SHA-1的信息摘要。
+
+把“Sec-WebSocket-Key”加上一个魔幻字符串“258EAFA5-E914-47DA-95CA-C5AB0DC85B11”。使用SHA-1加密，之后进行BASE-64编码，将结果做为“Sec-WebSocket-Accept”头的值，返回给客户端。
+
+用 node 实现的代码片段：
+```
+sha1 = crypto.createHash('sha1');
+sha1.update(headers["Sec-WebSocket-Key"]+"258EAFA5-E914-47DA-95CA-C5AB0DC85B11");
+ws_accept=sha1.digest('base64');
+```
+
 
 一旦连接建立成功，就可以在全双工模式下在 client 和 server 之间来回传递 WebSocket message。在网络中，每个消息以 0x00 字节开头，以 0xFF 结尾，中间数据采用 UTF-8 编码格式。
 在客户端和服务器之间的初始化握手阶段，基于同一底层 TCP/IP 连接，将 HTTP 协议升级至 WebSocket 协议。
@@ -143,3 +154,21 @@ document.getElementById("sendButton").onclick = function() {
     w.send(document.getElementById("inputMessage").value);
 }
 ```
+
+## example :
+包含文件：
+
+- websocket.html
+    客户端主页面
+- server.js
+    服务器脚本。
+- broadcast.html
+    通知页面。
+
+运行程序：
+```
+node server.js
+```
+访问链接： 
+用户主页面 - http://localhost:9999/websocket.html。
+广播页面 - http://localhost:9999/broadcast.html

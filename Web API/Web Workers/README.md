@@ -1,4 +1,4 @@
-# XMLHttpRequest 2
+# Web Workers
 [TOC]
 
 专用 Web Worker (Dedicated Web Worker) 提供了一个简单的方法使得 web 内容能够在后台运行脚本。一旦 worker 创建后，它可以向由它的创建者指定的事件监听函数传递消息，这样该 worker 生成的所有任务就都会接收到这些消息。

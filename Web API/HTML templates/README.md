@@ -1,6 +1,22 @@
 # HTML templates
 [TOC]
 
+## browser support
+browser      | version
+---------    | -----
+Chrome | 4+
+IE (limited) | 8
+Firefox | 2+
+Chrome for Android | 39+
+iOS Safari | 3.2+
+Android Browser | 3.2+
+UC Browser for Android | 9.9+
+Opera Mini | 5.0-8.0
+Safari | 3.1
+Opera | 25+
+IE Mobile (limited) | 10+
+Firefox for Android | 33+
+
 ## 简介
 HTML template element `<template>` 是一种持有在加载页面时不被渲染的 client-side(客户端内容)，但随后会在 JavaScript 中实例化的机制。认为模板是一个文档片段，被存储在文档中随后使用。不过，解析器是在页面加载时处理 `<template>` 元素的内容，以确保它是有效的。
 
@@ -27,6 +43,8 @@ if (supportsTemplate()) {
 }
 ```
 
+
+
 ## 声明模板内容
 HTML `<template>` 元素代表你标记的模板。它包含了"模板内容"；可被赋值的 DOM 片段。将模板想象成脚手架，你可以在整个应用程序声明周期中使用(和重用)。
 要创建模板内容，需要声明一些 markup(标记)，并把它包在 `<template>` 元素中：
@@ -36,7 +54,7 @@ HTML `<template>` 元素代表你标记的模板。它包含了"模板内容"；
   <div class="comment"></div>
 </template>
 ```
-> *细心地读者可能会注意到一个空的图片。这完全是正常的(故意的)。因为它不会在页面加载是读取这个图片，在控制台产生 404 错误。我们可以动态的生成这个 URL。*
+> *细心地读者可能会注意到一个空的图片。这完全是正常的(故意的)。因为它不会在页面加载是读取这个图片，在控制台产生 404 错误。我们可以动态的生成这个 URL。参见 [the pillars][http://www.html5rocks.com/en/tutorials/webcomponents/template/#toc-pillars]*
 
 ## The pillars
 包含在 `<template>` 中的内容有一些重要的特性：
@@ -91,7 +109,7 @@ document.body.appendChild(clone);
 ```
 
 ### Example: 通过 template 创建 Shadow DOM
-大多数人 attach Shadow DOM 到一个 host 通过设置 shadowDOM.innerHTML 的字符串。
+大部分人通过为 .innerHTML 赋值一串标记来将 Shadow DOM 挂载到 host 上：
 ```html
 <div id="host"></div>
 <script>
@@ -99,7 +117,7 @@ document.body.appendChild(clone);
   shadow.innerHTML = '<span>Host node</span>';
 </script>
 ```
-这种方法的问题是获得 Shadow DOM 比较复杂。你做得更多的是字符串连接。它不整洁，事情变得凌乱。这种方法需要将 XSS(跨站脚本攻击)的问题放在首位。通过 `<template>` 来解决：
+这种方法的问题是获得 Shadow DOM 比较复杂。你做得更多的是字符串连接。它不整洁，事情变得凌乱。这种方法很容易滋生 XSS(跨站脚本攻击)。通过 `<template>` 来解决：
 ```html
 <template>
 <style>
@@ -163,7 +181,7 @@ document.body.appendChild(clone);
 ## Gotchas (陷阱)
 这里有几个使用`<template>` 时遇到的陷阱：
 
- 1. 如果你使用 [modpagespeend][http://code.google.com/p/modpagespeed/] 注意这个 bug。内嵌在 template 中的 `<style scoped>`，PageSpeed 的 CSS 重写规则，很多都被转移到 `<header>` 中。
+ 1. 如果你使用 [modpagespeend][http://code.google.com/p/modpagespeed/] 注意这个 bug。内嵌在 template 中的 `<style scoped>`，可能会因为 PageSpeed 的 CSS 重写规则，很多都被转移到 `<header>` 中。
  
  2. 没有办法"prerender(预渲染)"模板。这意味着你不能预先加载资源，处理 JS，下载最初的 CSS。等等。这也适用于服务器和客户端。模板只有在它运行时才能够呈现。
  
@@ -181,10 +199,10 @@ document.body.appendChild(clone);
  
 ## The road to a standard (标准之路)
 
-不要忘记我们从何处来。standards-based HTML templates 的道路是漫长的。多年来，我们已经想出了一些非常聪明的技巧用于创建可重复使用的模板。下面我以前碰到的两种最常见的。包括我对他们的文章进行的比较研究。
- 
- Method 1：Offscreen DOM
+不要忘记我们从何处来。standards-based HTML templates 的道路是漫长的。多年来，我们已经想出了一些非常聪明的技巧用于创建可重复使用的模板。下面我以前碰到的两种最常见方法。出于比较的目的，我将它们放在本文中。 
+### Method 1：Offscreen DOM
  一种方法已经使用很长一段时间了，就是创建 "offscreen" DOM 并使用 hidden 属性或 display:none 属性隐藏它。
+
  ```html
  <div id="mytemplate" hidden>
   <img src="logo.png">
@@ -196,38 +214,40 @@ document.body.appendChild(clone);
 
 - 好的：使用 DOM —— 浏览器知道 DOM。这是它擅长的。我们可以很容易的复制它。
 - 好的：不让它渲染 —— 添加 hidden 属性防止它的显示。
-- 坏的：没有惰性 —— 尽管我们的内容是隐藏的。仍然会请求图像。
+- 坏的：没有惰性 —— 尽管我们的内容是隐藏的。仍然会发起图片请求。
 - 坏的：不利于 styling 和 theming(风格化和主题化) —— 如果嵌入 template 到网页中，必须为所有嵌入模板的网页添加 #mytemplate 标记的 CSS rules。这是脆弱的，没有保证的，我们可能在未来碰到命名冲突。例如，如果嵌入的网页已经有了该 ID 的元素，我们就需要做很多更改。
 
-## browser support
-browser      | version
----------    | -----
-Chrome | 4+
-IE (limited) | 8
-Firefox | 2+
-Chrome for Android | 39+
-iOS Safari | 3.2+
-Android Browser | 3.2+
-UC Browser for Android | 9.9+
-Opera Mini | 5.0-8.0
-Safari | 3.1
-Opera | 25+
-IE Mobile (limited) | 10+
-Firefox for Android | 33+
+### Method 2：Overloading script(重载脚本)
+另一种方法时重载 `<script>` 并将其中的内容作为字符串来操作。 John Resig 可能是第一个展示该技巧的人 —— 在 2008 年他的 [Micro Templating utility][http://ejohn.org/blog/javascript-micro-templating/] 中。 目前又出现了许多新的工具，例如 handlebars.js。
+
+例如：
+```html
+<script id="mytemplate" type="text/x-handlebars-template">
+  <img src="logo.png">
+  <div class="comment"></div>
+</script>
+```
+
+该技巧的优劣：
+
+- 好的：内容不会渲染 —— 浏览器不会渲染该块，因为 `<script>` 默认为 display:none。
+- 好的：惰性 —— 浏览器就不会将它的内容当作 JS 来解析，因为脚本的类型不为 "text/javascript"。
+- 坏的：安全问题 —— 鼓励使用 `innerHTML` 的。运行时分析用户提供的字符串数据，很容易导致XSS漏洞。
+
+## 总结
+还记得当 jQuery 使得操作 DOM 变为异常简单吗？结果就是 querySelector()/querySelectorAll() 被添加到了该平台中。很明显的胜利，不是吗？ 由于一个库推广了使用 CSS 选择器来获取 DOM 的方法从而使得它被规范采纳。这并不是常有的事，但我喜欢看到这样的事情发生。
+
+我觉得 `<template>` 也是这类的案例。它为我们规范了客户端模板的方式，但更重要的是，它不再需要我们疯狂的 2008 hacks。 促使整个 web 开发过程更健全，更容易维护，功能更多，在我看来，始终都是个好事情。
 
 
 ## 参考链接
 
-- [Data URIs 浏览器支持性][1]
-- [MDN：data URIs][2]
+- [WhatWG Specification][1]
 - [HTML's New Template Tag][2]
+- [HTML tempaltes 浏览器支持性][3]
 
 
-
-
-  [RFC2397]: http://www.ietf.org/rfc/rfc2397.txt "The "data" URL scheme"
-  
   [1]: https://html.spec.whatwg.org/multipage/scripting.html#the-template-element "WhatWG HTML Templates specification"
   [2]: http://www.html5rocks.com/en/tutorials/webcomponents/template/
-  [3]: http://software.hixie.ch/utilities/cgi/data/data
+  [3]: http://caniuse.com/#feat=template
  

@@ -54,7 +54,7 @@ HTML `<template>` 元素代表你标记的模板。它包含了"模板内容"；
   <div class="comment"></div>
 </template>
 ```
-> *细心地读者可能会注意到一个空的图片。这完全是正常的(故意的)。因为它不会在页面加载是读取这个图片，在控制台产生 404 错误。我们可以动态的生成这个 URL。参见 [the pillars][http://www.html5rocks.com/en/tutorials/webcomponents/template/#toc-pillars]*
+> *细心地读者可能会注意到一个空的图片。这完全是正常的(故意的)。因为它不会在页面加载是读取这个图片，在控制台产生 404 错误。我们可以动态的生成这个 URL。参见 [the pillars][the pillars]*
 
 ## The pillars
 包含在 `<template>` 中的内容有一些重要的特性：
@@ -181,7 +181,7 @@ document.body.appendChild(clone);
 ## Gotchas (陷阱)
 这里有几个使用`<template>` 时遇到的陷阱：
 
- 1. 如果你使用 [modpagespeend][http://code.google.com/p/modpagespeed/] 注意这个 bug。内嵌在 template 中的 `<style scoped>`，可能会因为 PageSpeed 的 CSS 重写规则，很多都被转移到 `<header>` 中。
+ 1. 如果你使用 [modpagespeend][modpagespeend] 注意这个 bug。内嵌在 template 中的 `<style scoped>`，可能会因为 PageSpeed 的 CSS 重写规则，很多都被转移到 `<header>` 中。
  
  2. 没有办法"prerender(预渲染)"模板。这意味着你不能预先加载资源，处理 JS，下载最初的 CSS。等等。这也适用于服务器和客户端。模板只有在它运行时才能够呈现。
  
@@ -250,4 +250,6 @@ document.body.appendChild(clone);
   [1]: https://html.spec.whatwg.org/multipage/scripting.html#the-template-element "WhatWG HTML Templates specification"
   [2]: http://www.html5rocks.com/en/tutorials/webcomponents/template/
   [3]: http://caniuse.com/#feat=template
+  [modpagespeend]: http://code.google.com/p/modpagespeed/
+  [the pillars]: http://www.html5rocks.com/en/tutorials/webcomponents/template/#toc-pillars
  

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setInterval Example</title>
+    <link rel="stylesheet" href="style.css" type="text/css"charset="utf-8" />
+    <script type="text/javascript" charset="utf-8" src="scripts/stats.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/rect.js"></script>
+    <script type="text/javascript" charset="utf-8" src="scripts/game.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1150473-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <canvas id="viewport" height="480" width="640"></canvas>
+
+    <script type="text/javascript" charset="utf-8">
+      var renderStats = new Stats();
+      document.body.appendChild(renderStats.domElement);
+
+      var updateStats = new Stats();
+      document.body.appendChild(updateStats.domElement);
+
+      Game.initialize();
+
+      // Add some moving rectangles
+      var i = 400;
+      while (i--) Game.addRect();
+      
+      Game.run = (function() {
+        var loops = 0, skipTicks = 1000 / Game.fps,
+            maxFrameSkip = 10,
+            nextGameTick = (new Date).getTime();
+
+        return function() {
+          loops = 0;
+
+          while ((new Date).getTime() > nextGameTick) {
+            updateStats.update();
+            Game.update();
+            nextGameTick += skipTicks;
+            loops++;
+          }
+
+          renderStats.update();
+          Game.draw();
+        };
+      })();
+      
+      window.setInterval(Game.run, 0);
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 # [JavaScript Threading With HTML5 Web Workers][1] (译文)
 
-忘记 `transforms`，`native video`，语义标记和其他一些无聊的 `HTML5` 废话；`web workers` 终于允许开发人员当前进程中允许一个单独的线程。
+忘记 `transforms`，`native video`，语义标记和其他一些无聊的 `HTML5` 废话；`web workers` 终于允许开发人员当前进程中运行一个单独的线程。
 线程听起来非常复杂，有些开发语言使它非常棘手，但你一定会很高兴的听到，`JavaScript` 的实现是好的并且 W3C 工作草案以保持稳定。`Web workers` 为 客户端提供了巨大的性能提升，但在我们开始之前，也有几件事情要注意...
 
 ## Web Worker 的限制

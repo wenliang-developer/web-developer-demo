@@ -111,12 +111,13 @@ enum NotificationDirection {
  4. 排入一个任务设置 permission 为 *permission*，如果 `callback` 给出，调用 `callback` 传入 *permission* 作为参数。
 
 一下是事件处理程序(及其相应的时间处理程序的事件类型)必须支持的 `Notification` 对象的属性。
-| event handler | event handler event type |
-| ------------- | ------------------------ |
-| onclick       | click                    |
-| onshow        | show                     |
-| onerror       | error                    |
-| onclose       | close                    |
+
+ event handler | event handler event type 
+ ------------- | ------------------------ 
+ onclick       | click                    
+ onshow        | show                     
+ onerror       | error                    
+ onclose       | close                    
 
 **close()** 方法必须运行通知的 `close steps`。
 **dir** 属性必须返回通知的 `direction`。

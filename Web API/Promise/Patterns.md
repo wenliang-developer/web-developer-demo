@@ -3,10 +3,10 @@
 
 我们已经看到了，甚至只是做两个简单的操作，当陆续考虑异步代码的错误处理时，它会变得及其复杂。我们也看到了`promise` 是如何帮助你透过 **.then**，使错误的堆栈在默认情况下得到减轻的。
 
-在本文中，我们将介绍一些更高级的模式供 promise 使用和一些辅助方法，让你的 promise 代码更简洁。
+在本文中，我们将介绍一些更高级的模式供 `promise` 使用和一些辅助方法，让你的 `promise` 代码更简洁。
 
 ## Promise.resolve(value)
-有些时候，你已经有了一个值，你先把它转换成一个 promise。你可能有时会发现自己与一个值，可能会或可能不会是一个 promise。最后，你可能会发现你有一个值，是一种 promise，但它不能正常工作，并希望将其转换成一个真正的 promise。
+有些时候，你已经有了一个值，你先把它转换成一个 `promise`。你可能有时会发现自己与一个值，可能会或可能不会是一个 `promise`。最后，你可能会发现你有一个值，是一种 `promise`，但它不能正常工作，并希望将其转换成一个真正的 `promise`。
 ```javascript
 var value = 10;
 var promiseForValue = Promise.resolve(value);
@@ -37,7 +37,7 @@ var definitelyPromise = new Promise(function (fulfill, reject) {
 ```
 
 ## Promise.reject
-这是最好的总是避免在一个异步方法中抛出同步异常的方法。总是返回一个 promise，可以以一致的方式处理所有的错误。为了更容易做到这一点，有一个生成 rejected promise 的快捷方式。
+这是最好的总是避免在一个异步方法中抛出同步异常的方法。总是返回一个 `promise`，可以以一致的方式处理所有的错误。为了更容易做到这一点，有一个生成 `rejected promise` 的快捷方式。
 ```javascript
 var rejectedPromise = Promise.reject(new Error('Whatever'));
 // equivalent to
@@ -47,7 +47,7 @@ var rejectedPromise = new Promise(function (fulfill, reject) {
 ```
 
 ## Parallel operations
-尝试并行会使问题更加复杂。考虑下面的函数，它试图读取文件的数组(参考 filename)，并分析它们的 JSON 然后通过 callback 返回结果数组。
+尝试并行会使问题更加复杂。考虑下面的函数，它试图读取文件的数组(参考 `filename`)，并分析它们的 `JSON` 然后通过 callback 返回结果数组。
 ```javascript
 function readJsonFiles(filenames, callback) {
   var pending = filenames.length;
@@ -76,7 +76,7 @@ function readJsonFiles(filenames, callback) {
 }
 ```
 ## Promise.all
-all 函数返回一个新的 promise。状态为 fulfilled 时具有传递给 promises 的 fulfillment 值的数组，或 rejects 是某种原因第一个 rejects 的 promises。
+**all** 函数返回一个新的 `promise`。状态为 `fulfilled` 时具有传递给 `promises` 的 `fulfillment` 值的数组，或 `rejects` 是某种原因第一个 `rejects` 的 `promises`。
 ```javascript
 function readJsonFiles(filenames) {
   // N.B. passing readJSON as a function, not calling it with `()`
@@ -88,7 +88,7 @@ readJsonFiles(['a.json', 'b.json']).done(function (results) {
   // If any of the files fails to be read, err is the first error
 });
 ```
-Promise.all 是一种内置的方法，所以你不必担心需要自己实现它，但它作为对 promise 如何轻松工作的一个很好的演示。
+**Promise.all** 是一种内置的方法，所以你不必担心需要自己实现它，但它作为对 `promise` 如何轻松工作的一个很好的演示。
 ```javascript
 function all(promises) {
   var accumulator = [];
@@ -105,9 +105,9 @@ function all(promises) {
   return ready.then(function () { return accumulator; });
 }
 ```
-这是怎么回事，我们首先创建一个变量来存储结果(被称为 accumulator)和一个变量来表示结果时候是最新的(称为 ready)。我们等待 ready，而它具有每轮更新的循环。这导致我们按顺序将每一次循环的 value 追加到 数组。通过在循环的结尾，ready 是将等待所有项目被插入到 accumulator 的 promise。
+这是怎么回事，我们首先创建一个变量来存储结果(被称为 **accumulator**)和一个变量来表示结果是否是最新的(称为 **ready**)。我们等待 **ready**，而它具有每轮更新的循环。这导致我们按顺序将每一次循环的 **value** 追加到数组。通过在循环的结尾，**ready** 是将等待所有项目被插入到 **accumulator** 的 **promise**。
 
-我们要做的是等待 ready promise，返回 accumulator。
+我们要做的是等待 **ready** `promise`，返回 **accumulator**。
 ## Promise.race
 有时候让两个 promise 相互比赛非常有用。考虑写 timeout 功能的情况。你可以这样做：
 ```javascript
@@ -126,7 +126,7 @@ function timeout(promise, time) {
   });
 }
 ```
-Promise.race 使得比赛很容易运行：
+`Promise.race` 使得比赛很容易运行：
 ```javascript
 function timeout(promise, time) {
   return Promise.race([promise, delay(time).then(function () {
@@ -134,18 +134,22 @@ function timeout(promise, time) {
   })]);
 }
 ```
-以首先赢得比赛的 promise(fulfills 或 rejects)为准，并确定返回结果。
+以首先赢得比赛的 `promise`(fulfills 或 rejects)为准，并确定返回结果。
 
-[**Patterns→**][5]
+## Further Reading
+
+ - [Generators][4] —— 学习如何使用生成器和 promise 协同工作，使得 promise 编程更容易(在浏览器中使用 ES6 支持)。
+ - [MDN][3] —— mozilla 开发者网站有许多 promise 的文档。
+ - [then/promise][5] ——　在 JavaScript 中所有这些辅助方法的实现。
+
+[**←Promise**][2]           
+[**Generators→**][4]
 
 [1]: https://www.promisejs.org/patterns/
-[2]: https://www.promisejs.org/polyfills/promise-6.0.0.min.js "promise minified polyfill"
-[3]: https://www.promisejs.org/polyfills/promise-6.0.0.min.js "promise unminified polyfill"
-[4]: https://github.com/then/promise "node.js promise"
-[5]: https://www.promisejs.org/patterns/ "Patterns"
-[6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise "MDN"
-[7]: https://www.promisejs.org/polyfills/promise-done-6.0.0.min.js "promise done minified polyfill"
-[8]: https://www.promisejs.org/polyfills/promise-done-6.0.0.js "promise done unminified polyfill"
+[2]: https://www.promisejs.org/
+[3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise "MDN"
+[4]: https://www.promisejs.org/generators/
+[5]: https://github.com/then/promise/blob/master/index.js
 
   
  

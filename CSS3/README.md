@@ -10,8 +10,8 @@
 
 以下是各模块相关规范：
 
- 1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/。
- 2. 
+ 1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
+ 2. Flexible Layout -- http://www.w3.org/TR/css3-flexbox/
 
 ## 扩展阅读
 

@@ -6,7 +6,7 @@
 
 由于过于庞大，`CSS3` 遵循模块开发，这将有助于理清模块化规范之间的关系。以下是 `CSS` 分类及其状态图详情请参阅 [wikipedia -- File:CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg][1]：
 
-<embed src="./images/CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg" style="max-width:100%" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+<img src="./images/CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg.png" style="max-width:100%"/>
 
 以下是各模块相关规范：
 

@@ -12,6 +12,41 @@
 
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
  2. Flexible Layout -- http://www.w3.org/TR/css3-flexbox/
+ 3. CSS Image Values and Replaced Content Module Level 3 -- http://www.w3.org/TR/css3-images/
+     - Gradients
+ 4. CSS Color Module Level 3 -- http://www.w3.org/TR/css3-color/
+     - RGB
+     - RGBA
+     - HSL
+     - HSLA
+     - opacity
+ 5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
+     - border-radius
+     - box-shadow：inset x-offset y-offset blur-radius spread-radius color
+ 6. CSS Text Decoration Module Level 3 -- http://www.w3.org/TR/css-text-decor-3
+     - text-shadow：X-Offset Y-Offset Blur Color
+ 7. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
+     - Transform
+     - transform-origin
+ 8. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
+     - transition
+     - transition-property -- 作用的属性
+     - transition-duration -- 持续时间
+     - transition-timing-function
+     - transition-delay -- 延迟
+```
+transition: <property> <duration> <animation type> <delay>
+```
+ 9. CSS Animations -- http://www.w3.org/TR/css3-animations/
+     - animation
+     - animation-name
+     - animation-duration
+     - animation-timing-function
+     - animation-delay
+     - animation-iteration-count
+     - animation-direction
+     - animation-play-state
+
 
 ## 扩展阅读
 

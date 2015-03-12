@@ -22,22 +22,32 @@
      - opacity
  5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
      - border-radius
-     - box-shadow：inset x-offset y-offset blur-radius spread-radius color
+     - box-shadow：`inset x-offset y-offset blur-radius spread-radius color`
+     - border-image
+     - border-image-source
+     - border-image-slice
+     - border-image-width
+     - border-image-repeat
+     - background -- multiple background
+     - background-size
+     - background-clip: `border-box | padding-box | content-box`
+     - background-origin: `border-box | padding-box | content-box` -- 设置背景图片显示原点
  6. CSS Text Decoration Module Level 3 -- http://www.w3.org/TR/css-text-decor-3
-     - text-shadow：X-Offset Y-Offset Blur Color
- 7. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
+     - text-shadow：`X-Offset Y-Offset Blur Color`
+ 7. CSS Text Module Level 3 -- http://www.w3.org/TR/css-text-3/
+     - word-wrap
+     - word-break
+     - white-space
+ 8. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
      - Transform
      - transform-origin
- 8. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
-     - transition
+ 9. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
+     - transition: `<property> <duration> <animation type> <delay>`
      - transition-property -- 作用的属性
      - transition-duration -- 持续时间
      - transition-timing-function
      - transition-delay -- 延迟
-```
-transition: <property> <duration> <animation type> <delay>
-```
- 9. CSS Animations -- http://www.w3.org/TR/css3-animations/
+ 10. CSS Animations -- http://www.w3.org/TR/css3-animations/
      - animation
      - animation-name
      - animation-duration
@@ -46,6 +56,14 @@ transition: <property> <duration> <animation type> <delay>
      - animation-iteration-count
      - animation-direction
      - animation-play-state
+ 11. CSS Basic User Interface Module Level 3 (CSS3 UI) -- http://www.w3.org/TR/css3-ui/
+     - text-overflow
+     - box-sizing: `content-box | padding-box | border-box`
+
+ 12. CSS Fonts Module Level 3 -- http://www.w3.org/TR/css-fonts-3/
+     - @font-face: download font url
+         - http://www.google.com/webfonts
+         - http://www.dafont.com/
 
 
 ## 扩展阅读

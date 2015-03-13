@@ -6,16 +6,16 @@
 
  1. CSS Pseudo-Elements Module Level 4 -- http://www.w3.org/TR/css-pseudo-4/
      - ::selection -- 设置选中文本后的背景色与前景色。
-         > /*Webkit,Opera9.5+,Ie9+*/
-            ::selection {
-	            background: 颜色值；
-	            color:颜色值；
-            }
-            /*Mozilla Firefox*/
-            ::-moz-selection {
-            	background: 颜色值；
-	            color:颜色值；
-            }```
+> /*Webkit,Opera9.5+,Ie9+*/
+::selection {
+    background: 颜色值;
+    color:颜色值;
+}
+/*Mozilla Firefox*/
+::-moz-selection {
+    background: 颜色值;
+    color:颜色值;
+}
 
 
 ## 扩展阅读

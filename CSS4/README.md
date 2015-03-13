@@ -25,6 +25,6 @@
  - [Wikipedia - CSS][1] —— `CSS` 相关介绍。
 
 
-[2]: http://en.wikipedia.org/wiki/Cascading_Style_Sheets
+[1]: http://en.wikipedia.org/wiki/Cascading_Style_Sheets
   
  

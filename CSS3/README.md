@@ -65,6 +65,17 @@
          - http://www.google.com/webfonts
          - http://www.dafont.com/
 
+ 13. CSS Multi-column Layout Module -- http://www.w3.org/TR/css3-multicol/
+     - column-count
+     - column-width
+     - column-gap: 列间隔
+     - column-rule: 列分隔线样式，不占用空间
+     - column-rule-color
+     - column-rule-style
+     - column-rule-width
+     - column-span: 跨列显示
+
+ 14. Media Queries -- http://www.w3.org/TR/css3-mediaqueries/
 
 ## 扩展阅读
 

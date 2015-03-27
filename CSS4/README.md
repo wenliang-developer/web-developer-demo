@@ -19,9 +19,9 @@
 }
 ```
  2. Compositing and Blending Level 1 (混合模式) -- http://www.w3.org/TR/compositing-1/
-     - mix-blend-mode -- 主要是用于源与背景颜色或背景图像混合
-     - isolation -- 用来设置源是否与其他元素隔离
-     - background-blend-mode -- 用来定义元素背景层的混合模式
+     - mix-blend-mode -- 主要是用于源与背景颜色或背景图像混合.
+     - isolation -- 用来设置源是否与其他元素隔离.
+     - background-blend-mode -- 用来定义元素背景层的混合模式.
 
 ## 扩展阅读
 

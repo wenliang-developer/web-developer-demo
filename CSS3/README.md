@@ -8,6 +8,13 @@
 
 <img src="./images/CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg.png" style="max-width:100%"/>
 
+非 w3c 标准：
+
+ 1. CSS Reflections -- https://www.webkit.org/blog/182/css-reflections/
+     - box-reflect -- `-webkit-box-reflect: <direction> <offset> <mask-box-image>`
+
+. CSS Reflections
+
 以下是各模块相关规范：
 
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
@@ -24,6 +31,8 @@
      - "margin:auto" -- 一个 "auto" 的 margin 会合并剩余的空间。它可以用来把伸缩项目挤到其他位置。
  3. CSS Image Values and Replaced Content Module Level 3 -- http://www.w3.org/TR/css3-images/
      - Gradients
+     - object-fit 属性指定了替换元素(replaced elements)的内容应该如何使用他的宽度和高度来填充其容器.
+     - object-position 属性指定了替换元素在容器中的对齐方式.
  4. CSS Color Module Level 3 -- http://www.w3.org/TR/css3-color/
      - RGB
      - RGBA

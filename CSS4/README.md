@@ -18,7 +18,10 @@
     color:颜色值;
 }
 ```
-
+ 2. Compositing and Blending Level 1 (混合模式) -- http://www.w3.org/TR/compositing-1/
+     - mix-blend-mode -- 主要是用于源与背景颜色或背景图像混合
+     - isolation
+     - background-blend-mode -- http://codepen.io/airen/pen/qDrlF
 
 ## 扩展阅读
 

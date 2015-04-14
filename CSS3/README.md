@@ -20,13 +20,16 @@
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
  2. CSS Flexible Box Layout Module Level 1 -- http://www.w3.org/TR/css-flexbox-1/
      - flex -- 指定了一个数字，代表了这个伸缩项目该占用的剩余空间比例
+     - flex-grow -- 伸展系数
+     - flex-shrink -- 收缩系数
+     - flex-basis
      - flex-direction -- 弹性布局，轴线方向
      - flex-wrap -- 换行方式
      - flex-flow -- `<flex-direction> || <flex-wrap>`
      - justify-content -- 主轴对齐
-     - align-items -- 侧轴对齐
+     - align-items -- 侧轴子元素对齐
      - align-content -- 伸缩行对齐方式
-     - align-self -- 侧轴对齐
+     - align-self -- 侧轴对齐，在flex子元素上设置
      - order -- 显示顺序
      - "margin:auto" -- 一个 "auto" 的 margin 会合并剩余的空间。它可以用来把伸缩项目挤到其他位置。
  3. CSS Image Values and Replaced Content Module Level 3 -- http://www.w3.org/TR/css3-images/

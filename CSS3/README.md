@@ -126,6 +126,7 @@
      - grid-auto-flow
  19. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
      - clip-path
+     - mask-image
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

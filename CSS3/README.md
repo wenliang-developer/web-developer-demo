@@ -86,7 +86,7 @@
      - @font-face: download font url
          - http://www.google.com/webfonts
          - http://www.dafont.com/
-
+         - http://www.fontsquirrel.com/tools/webfont-generator -- 字体转换工具
  13. CSS Multi-column Layout Module -- http://www.w3.org/TR/css3-multicol/
      - column-count
      - column-width

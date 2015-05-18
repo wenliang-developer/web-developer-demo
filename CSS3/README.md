@@ -13,8 +13,6 @@
  1. CSS Reflections -- https://www.webkit.org/blog/182/css-reflections/
      - box-reflect -- `-webkit-box-reflect: <direction> <offset> <mask-box-image>`
 
-. CSS Reflections
-
 以下是各模块相关规范：
 
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/

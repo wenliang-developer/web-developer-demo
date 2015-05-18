@@ -1,6 +1,8 @@
 # 精妙绝伦的 CSS4
 [TOC]
 
+非 W3C 标准：
+ 1. pointer-events -- https://wiki.csswg.org/spec/css4-ui#pointer-events
 
 以下是各模块相关规范：
 

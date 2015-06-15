@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js canvas - interactive - cubes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: green;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="Three.js"></script>
+
+		<script>
+
+			var container;
+			var camera, scene, projector, renderer;
+			var particleMaterialBlack;            
+            var particleMaterialGreen;            
+            var particleMaterialBlue;            
+            var viewWidth = window.innerWidth;
+            var viewHeight = window.innerHeight;
+            var cameraOffset = window.innerWidth;
+			var objects = [];               
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );				
+                
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.set( 0, 0, cameraOffset );                
+
+				scene = new THREE.Scene();
+
+				var geometry = new THREE.BoxGeometry( 100, 100, 100 );
+				
+
+                var object = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { color: 0x0000ff, opacity: 0.5 } ) );
+                object.position.x = 0;
+                object.position.y = 0;
+                object.position.z = 0;
+
+                object.scale.x = 1;
+                object.scale.y = 1;
+                object.scale.z = 1;
+
+                object.rotation.x = Math.PI / 4;
+                object.rotation.y = Math.PI / 4;
+                object.rotation.z = Math.PI / 4;
+
+                scene.add( object );
+
+                objects.push( object );
+
+
+				var PI2 = Math.PI * 2;
+				particleMaterialBlack = new THREE.SpriteCanvasMaterial( {
+
+					color: 0x000000,
+					program: function ( context ) {
+
+						context.beginPath();
+						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.fill();
+
+					}
+
+				} );
+                particleMaterialGreen = new THREE.SpriteCanvasMaterial( {
+
+					color: 0x00FF00,
+					program: function ( context ) {
+
+						context.beginPath();
+						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.fill();
+
+					}
+
+				} );
+                
+                particleMaterialBlue = new THREE.SpriteCanvasMaterial( {
+
+					color: 0x0000FF,
+					program: function ( context ) {
+
+						context.beginPath();
+						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.fill();
+					}
+				} );
+                
+				projector = new THREE.Projector();
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setClearColor( 0xf0f0f0 );
+				renderer.setSize( viewWidth, viewHeight );
+                           
+				container.appendChild( renderer.domElement );
+
+				renderer.domElement.addEventListener( 'mousedown', onDocumentMouseDown, false );				
+
+				window.addEventListener( 'resize', onWindowResize, false );
+                camera.lookAt(new THREE.Vector3(0,0,0));
+                render();                
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+
+            function addNewParticle(pos, scale, particleMaterial)
+            {
+                if( !scale )
+                {
+                    scale = 16;
+                }
+                if( !particleMaterial )
+                {
+                    particleMaterial = particleMaterialBlack;
+                }
+                var particle = new THREE.Sprite( particleMaterial );
+                particle.position = pos;
+                particle.scale.x = particle.scale.y = scale;
+                scene.add( particle );
+            }
+            
+            function drawLine(pointA, pointB, lineColor)
+            {            
+                var material = new THREE.LineBasicMaterial({
+                        color: lineColor
+                });
+            
+                var geometry = new THREE.Geometry();
+                var max = 500*500;
+                if( Math.abs(pointA.x - pointB.x) < max && Math.abs(pointA.y - pointB.y) < max && Math.abs(pointA.z - pointB.z) < max )
+                {
+                    geometry.vertices.push(pointA);
+                    geometry.vertices.push(pointB);
+                                    
+                    var line = new THREE.Line(geometry, material);
+                    scene.add(line);      
+                }
+                else
+                {
+                    console.debug(pointA.x.toString() + ':' + pointA.y.toString() + ':' + pointA.z.toString()  + ':' + 
+                                pointB.x.toString() + ':' + pointB.y.toString()  + ':' + pointB.z.toString());
+                }
+            }           
+            
+            function getFactorPos( val, factor, step )
+            {
+                return step / factor * val;                
+            }
+            
+            function drawParticleLine(pointA,pointB,particleMaterial)
+            {
+                var factor = 50;
+                for( var i = 0; i < factor; i++ )
+                {
+                    var x = getFactorPos( pointB.x - pointA.x, factor, i );
+                    var y = getFactorPos( pointB.y - pointA.y, factor, i );
+                    var z = getFactorPos( pointB.z - pointA.z, factor, i );
+                    addNewParticle( new THREE.Vector3( pointA.x+x,pointA.y+y,pointA.z+z ), Math.max(1, window.innerWidth / 500), particleMaterial );
+                }
+            }
+            
+			function onDocumentMouseDown( event ) {
+
+                if( event.button !== 0)
+                {
+                    return;
+                }
+				event.preventDefault();
+                var zInput = document.getElementById('zInput');
+                var z = parseFloat(zInput.value);
+                if( isNaN(z) )
+                {
+                    return;
+                }
+                camera.position.set( 0, 0, cameraOffset );
+                render();
+                var mouse3D = new THREE.Vector3( ( (event.clientX) / viewWidth ) * 2 - 1, - ( (event.clientY) / viewHeight ) * 2 + 1, z );                               
+				projector.unprojectVector( mouse3D, camera );                                                
+                drawParticleLine( camera.position, mouse3D, particleMaterialGreen );//comment this and uncomment below to see single point
+                //addNewParticle( new THREE.Vector3(mouse3D.x,mouse3D.y,mouse3D.z), Math.max(1, window.innerWidth / 500), particleMaterialGreen );
+                mouse3D.sub( camera.position );                
+                mouse3D.normalize();
+				var raycaster = new THREE.Raycaster( camera.position, mouse3D );
+                var scale = window.innerWidth*2;
+				var rayDir = new THREE.Vector3(raycaster.ray.direction.x*scale,raycaster.ray.direction.y*scale,raycaster.ray.direction.z*scale);
+                var rayVector = new THREE.Vector3(camera.position.x + rayDir.x, camera.position.y + rayDir.y, camera.position.z + rayDir.z);
+                drawParticleLine(camera.position, rayVector, particleMaterialBlack);
+                
+                var intersects = raycaster.intersectObjects( objects );
+				// Change color if hit block
+				if ( intersects.length > 0 ) {
+
+					intersects[ 0 ].object.material.color.setHex( Math.random() * 0xffffff );
+				}		
+                var oldPos = new THREE.Vector3(camera.position.x,camera.position.y,camera.position.z);                
+                camera.position.set( camera.position.x+10, camera.position.y+10, camera.position.z+20 );                                
+                addNewParticle( oldPos, 4, particleMaterialBlue );
+                render();
+			}
+
+			var radius = 600;
+			var theta = 0;
+
+			function render() {				
+				renderer.render( scene, camera );
+			}
+
+		</script>
+    <label style='position:absolute;top:0px;left:0px'>z:</label><input type="text" style='position:absolute;top:0px;left:50px' value="0.5" id='zInput'>
+	</body>
+</html>

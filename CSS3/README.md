@@ -61,6 +61,10 @@
  8. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
      - Transform
      - transform-origin
+     - transform-style：`flat|preserve-3d`
+     - perspective：`none | <length>`
+     - perspective-origin
+     - backface-visibility -- 定义当元素不面向屏幕时是否可见。如果在旋转元素不希望看到其背面时，该属性很有用。
  9. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
      - transition: `<property> <duration> <animation type> <delay>`
      - transition-property -- 作用的属性
@@ -85,6 +89,7 @@
          - http://www.google.com/webfonts
          - http://www.dafont.com/
          - http://www.fontsquirrel.com/tools/webfont-generator -- 字体转换工具
+         - http://www.youziku.com/ -- 有字库 中文字体转换 @font-face
  13. CSS Multi-column Layout Module -- http://www.w3.org/TR/css3-multicol/
      - column-count
      - column-width

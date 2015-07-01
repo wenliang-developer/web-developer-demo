@@ -20,13 +20,13 @@
      - flex -- 指定了一个数字，代表了这个伸缩项目该占用的剩余空间比例
      - flex-grow -- 伸展系数
      - flex-shrink -- 收缩系数
-     - flex-basis
-     - flex-direction -- 弹性布局，轴线方向
-     - flex-wrap -- 换行方式
-     - flex-flow -- `<flex-direction> || <flex-wrap>`
-     - justify-content -- 主轴对齐
-     - align-items -- 侧轴子元素对齐
-     - align-content -- 伸缩行对齐方式
+     - flex-basis -- 定义了 Flex 项目在分配 Flex 容器剩余空间之前的一个默认尺寸
+     - flex-direction: `row | row-reverse | column | column-reverse` -- 弹性布局，轴线方向
+     - flex-wrap: `nowrap | wrap | wrap-reverse` -- 换行方式
+     - flex-flow: `<flex-direction> || <flex-wrap>`
+     - justify-content: `flex-start | flex-end | center | space-between | space-around` -- 主轴对齐
+     - align-items: ` flex-start | flex-end | center | baseline | stretch` -- 侧轴子元素对齐
+     - align-content: `flex-start | flex-end | center | space-between | space-around | stretch`  -- 伸缩行对齐方式
      - align-self -- 侧轴对齐，在flex子元素上设置
      - order -- 显示顺序
      - "margin:auto" -- 一个 "auto" 的 margin 会合并剩余的空间。它可以用来把伸缩项目挤到其他位置。

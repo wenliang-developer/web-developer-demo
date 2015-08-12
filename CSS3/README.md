@@ -134,6 +134,8 @@
      - mix-blend-mode
  21. Pointer Events -- http://www.w3.org/TR/pointerevents/
      - touch-action: `auto | none | [ pan-x || pan-y ] | manipulation`
+ 22. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
+     - will-change
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

@@ -1,0 +1,1 @@
+- Vibration API -- http://www.w3.org/TR/vibration/

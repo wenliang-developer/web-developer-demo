@@ -132,6 +132,7 @@
      - mask
      - mask-type: `luminance | alpha`
      - mask-image
+     - mask-border
  20. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
      - mix-blend-mode
  21. Pointer Events -- http://www.w3.org/TR/pointerevents/

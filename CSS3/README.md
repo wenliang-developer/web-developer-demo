@@ -129,6 +129,8 @@
      - grid-auto-flow
  19. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
      - clip-path
+     - mask
+     - mask-type: `luminance | alpha`
      - mask-image
  20. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
      - mix-blend-mode

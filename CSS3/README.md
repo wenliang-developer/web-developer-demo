@@ -47,7 +47,7 @@
          - 元素的盒阴影
          - img的alt文本。也就是，当无法显示图像时，代替图像出现的文本，会继承这个颜色值。
          - 列表项的小黑点和边框
-         - 一些浏览器（比如Chrome）水平线（<hr>）的边框颜色。（没有边框的话，颜色就不会受影响）。
+         - 一些浏览器（比如Chrome）水平线（`<hr>`）的边框颜色。（没有边框的话，颜色就不会受影响）。
  5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
      - border-radius
      - box-shadow：`inset x-offset y-offset blur-radius spread-radius color`

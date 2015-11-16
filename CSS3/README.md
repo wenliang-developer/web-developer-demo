@@ -40,7 +40,14 @@
      - HSL
      - HSLA
      - opacity
-     - currentColor -- currentColor 的值是由当前元素使用的 `color` 属性的计算值决定的，如果没有则继承父级元素。
+     - currentColor -- currentColor 允许需要 <color> 的地方得到或者继承父元素的 color，因此，它其实就是作为一个inherit值，允许那些不能通过属性或子元素继承的颜色进行继承。这也意味着，对于已经继承了color值的属性，currentColor不会再被使用。元素中将会得到/继承元素color值的包括：
+         - 元素的文本内容——正是color属性使用的地方
+         - 文本的轮廓
+         - 元素的边框
+         - 元素的盒阴影
+         - img的alt文本。也就是，当无法显示图像时，代替图像出现的文本，会继承这个颜色值。
+         - 列表项的小黑点和边框
+         - 一些浏览器（比如Chrome）水平线（<hr>）的边框颜色。（没有边框的话，颜色就不会受影响）。
  5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
      - border-radius
      - box-shadow：`inset x-offset y-offset blur-radius spread-radius color`

@@ -139,6 +139,9 @@
      - touch-action: `auto | none | [ pan-x || pan-y ] | manipulation`
  22. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
      - will-change
+ 23. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
+     - shape-outside -- 让文本围在图形外
+     - shape-margin -- 使用 shape-outside 时，文字与图片的 margin
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

@@ -40,6 +40,7 @@
      - HSL
      - HSLA
      - opacity
+     - currentColor -- currentColor 的值是由当前元素使用的 `color` 属性的计算值决定的，如果没有则继承父级元素。
  5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
      - border-radius
      - box-shadow：`inset x-offset y-offset blur-radius spread-radius color`

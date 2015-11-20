@@ -8,12 +8,12 @@
 
 <img src="./images/CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg.png" style="max-width:100%"/>
 
-非 w3c 标准：
+##非 w3c 标准：
 
  1. CSS Reflections -- https://www.webkit.org/blog/182/css-reflections/
      - box-reflect -- `-webkit-box-reflect: <direction> <offset> <mask-box-image>`
 
-以下是各模块相关规范：
+##以下是 W3C 各模块相关规范：
 
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
  2. CSS Flexible Box Layout Module Level 1 -- http://www.w3.org/TR/css-flexbox-1/
@@ -91,7 +91,6 @@
  11. CSS Basic User Interface Module Level 3 (CSS3 UI) -- http://www.w3.org/TR/css3-ui/
      - text-overflow
      - box-sizing: `content-box | padding-box | border-box`
-
  12. CSS Fonts Module Level 3 -- http://www.w3.org/TR/css-fonts-3/
      - @font-face: download font url
          - http://www.google.com/webfonts
@@ -107,10 +106,9 @@
      - column-rule-style
      - column-rule-width
      - column-span: 跨列显示
-
  14. Media Queries -- http://www.w3.org/TR/css3-mediaqueries/
  15. Filter Effects Module Level 1 -- http://www.w3.org/TR/filter-effects-1/
-     - filter：
+     - filter：<filter-function-list>
          - grayscale 灰度
          - sepia 褐色
          - saturate 饱和度
@@ -121,10 +119,9 @@
          - contrast 对比度
          - blur 模糊
          - drop-shadow 阴影
-     - filter() = `filter([ <image> | <string> ], <filter-function-list>)`
+     - filter():  `filter([ <image> | <string> ], <filter-function-list>)`
  16. Filter Effects Module Level 2 -- https://drafts.fxtf.org/filters-2/
-     - backdrop-filter: `none | [<filter-function-list>](http://dev.w3.org/fxtf/filters/#typedef-filter-function-list)`
- 
+     - backdrop-filter: `none | <filter-function-list>`
  17. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
      - calc() -- calculate(计算)
      - vh -- (viewport height)/100

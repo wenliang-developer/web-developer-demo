@@ -108,7 +108,7 @@
      - column-span: 跨列显示
  14. Media Queries -- http://www.w3.org/TR/css3-mediaqueries/
  15. Filter Effects Module Level 1 -- http://www.w3.org/TR/filter-effects-1/
-     - filter：<filter-function-list>
+     - filter：`none | <filter-function-list>`
          - grayscale 灰度
          - sepia 褐色
          - saturate 饱和度

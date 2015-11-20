@@ -121,7 +121,7 @@
          - drop-shadow 阴影
      - filter():  `filter([ <image> | <string> ], <filter-function-list>)`
  16. Filter Effects Module Level 2 -- https://drafts.fxtf.org/filters-2/
-     - backdrop-filter: `none | <filter-function-list>`
+     - backdrop-filter: `none | <filter-function-list>`, 与 filter 属性类似，但是 filter 属性会直接影响其后代所有元素，而 backdrop-filter 只针对元素背景做特效。
  17. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
      - calc() -- calculate(计算)
      - vh -- (viewport height)/100

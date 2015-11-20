@@ -121,16 +121,20 @@
          - contrast 对比度
          - blur 模糊
          - drop-shadow 阴影
- 16. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
+     - filter() = `filter([ <image> | <string> ], <filter-function-list>)`
+ 16. Filter Effects Module Level 2 -- https://drafts.fxtf.org/filters-2/
+     - backdrop-filter: `none | [<filter-function-list>](http://dev.w3.org/fxtf/filters/#typedef-filter-function-list)`
+ 
+ 17. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
      - calc() -- calculate(计算)
      - vh -- (viewport height)/100
      - vw -- (viewport width)/100
      - vmin -- ((viewport height) > (viewport width) ? (viewport width) : (viewport height))/100
      - vmax -- ((viewport height) < (viewport width) ? (viewport width) : (viewport height))/100
- 17. CSS Conditional Rules Module Level 3 -- http://www.w3.org/TR/css3-conditional/
+ 18. CSS Conditional Rules Module Level 3 -- http://www.w3.org/TR/css3-conditional/
      - @supports 
      - @media
- 18. CSS Grid Layout Module Level 1 -- http://www.w3.org/TR/css-grid-1/
+ 19. CSS Grid Layout Module Level 1 -- http://www.w3.org/TR/css-grid-1/
      - grid-template-columns
      - grid-template-rows
      - grid-template-areas
@@ -138,20 +142,20 @@
      - grid-row
      - grid-area
      - grid-auto-flow
- 19. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
+ 20. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
      - clip-path
      - mask
      - mask-type: `luminance | alpha`
      - mask-image
      - mask-border
- 20. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
+ 21. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
      - mix-blend-mode: `normal | multiply | screen | overlay | darken | lighten | color-dodge |color-burn | hard-light | soft-light | difference | exclusion | hue | 
 saturation | color | luminosity`
- 21. Pointer Events -- http://www.w3.org/TR/pointerevents/
+ 22. Pointer Events -- http://www.w3.org/TR/pointerevents/
      - touch-action: `auto | none | [ pan-x || pan-y ] | manipulation`
- 22. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
+ 23. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
      - will-change
- 23. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
+ 24. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
      - shape-outside -- 让文本围在图形外
      - shape-margin -- 使用 shape-outside 时，文字与图片的 margin
 

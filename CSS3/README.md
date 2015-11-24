@@ -34,6 +34,10 @@
      - Gradients
      - object-fit 属性指定了替换元素(replaced elements)的内容应该如何使用他的宽度和高度来填充其容器.
      - object-position 属性指定了替换元素在容器中的对齐方式.
+     - linear-gradient()
+     - radial-gradient()
+     - repeating-linear-gradient()
+     - repeating-radial-gradient()
  4. CSS Color Module Level 3 -- http://www.w3.org/TR/css3-color/
      - RGB
      - RGBA

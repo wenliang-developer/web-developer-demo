@@ -155,6 +155,8 @@ saturation | color | luminosity`
  24. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
      - shape-outside -- 让文本围在图形外
      - shape-margin -- 使用 shape-outside 时，文字与图片的 margin
+ 25. CSS Cascading and Inheritance Level 3 -- http://www.w3.org/TR/css-cascade-3/
+     - all
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

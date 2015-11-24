@@ -158,7 +158,7 @@ saturation | color | luminosity`
  25. CSS Cascading and Inheritance Level 3 -- http://www.w3.org/TR/css-cascade-3/
      - all
  26. CSS Custom Properties for Cascading Variables Module Level 1 -- http://www.w3.org/TR/css-variables/
-     - `--*` -- 自定义属性例如：`--custom-css-propert`
+     - `--*` -- 自定义属性例如：`--custom-property-name`
      - var() -- `var( <custom-property-name> [, <any-value> ]? )`
 
 

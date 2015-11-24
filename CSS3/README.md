@@ -60,7 +60,7 @@
      - background-size
      - background-clip: `border-box | padding-box | content-box`
      - background-origin: `border-box | padding-box | content-box` -- 设置背景图片显示原点
-     - background-position: `<position> [ , <position> ]*` -- 详细的定位参数 [`<position>`](http://www.w3.org/TR/css3-background/#ltpositiongt)
+     - background-position: `<position> [ , <position> ]*` --例如: `background-position: right 5px bottom 5px;`, 详见定位参数 [`<position>`](http://www.w3.org/TR/css3-background/#ltpositiongt)
  6. CSS Text Decoration Module Level 3 -- http://www.w3.org/TR/css-text-decor-3
      - text-shadow：`X-Offset Y-Offset Blur Color`
  7. CSS Text Module Level 3 -- http://www.w3.org/TR/css-text-3/

@@ -159,7 +159,7 @@ saturation | color | luminosity`
      - all
  26. CSS Custom Properties for Cascading Variables Module Level 1 -- http://www.w3.org/TR/css-variables/
      - `--*` -- 自定义属性例如：`--custom-css-propert`
-     - var() -- 访问自定义属性：`var(--custom-css-propert)`
+     - var() -- `var( <custom-property-name> [, <any-value> ]? )`
 
 
 ## 扩展阅读

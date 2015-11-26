@@ -38,7 +38,9 @@
      - radial-gradient()
      - repeating-linear-gradient()
      - repeating-radial-gradient()
- 4. CSS Color Module Level 3 -- http://www.w3.org/TR/css3-color/
+ 4. CSS Image Values and Replaced Content Module Level 4 -- http://www.w3.org/TR/css4-images/
+     - conic-gradient()
+ 5. CSS Color Module Level 3 -- http://www.w3.org/TR/css3-color/
      - RGB
      - RGBA
      - HSL
@@ -52,7 +54,7 @@
          - img的alt文本。也就是，当无法显示图像时，代替图像出现的文本，会继承这个颜色值。
          - 列表项的小黑点和边框
          - 一些浏览器（比如Chrome）水平线（`<hr>`）的边框颜色。（没有边框的话，颜色就不会受影响）。
- 5. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
+ 6. CSS Backgrounds and Borders Module Level 3 -- http://www.w3.org/TR/css3-background/
      - border-radius
      - box-shadow：`inset x-offset y-offset blur-radius spread-radius color`
      - border-image
@@ -65,26 +67,26 @@
      - background-clip: `border-box | padding-box | content-box`
      - background-origin: `border-box | padding-box | content-box` -- 设置背景图片显示原点
      - background-position: `<position> [ , <position> ]*` --例如: `background-position: right 5px bottom 5px;`, 详见定位参数 [`<position>`](http://www.w3.org/TR/css3-background/#ltpositiongt)
- 6. CSS Text Decoration Module Level 3 -- http://www.w3.org/TR/css-text-decor-3
+ 7. CSS Text Decoration Module Level 3 -- http://www.w3.org/TR/css-text-decor-3
      - text-shadow：`X-Offset Y-Offset Blur Color`
- 7. CSS Text Module Level 3 -- http://www.w3.org/TR/css-text-3/
+ 8. CSS Text Module Level 3 -- http://www.w3.org/TR/css-text-3/
      - word-wrap
      - word-break
      - white-space
- 8. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
+ 9. CSS Transforms Module Level 1 -- http://www.w3.org/TR/css-transforms-1/
      - Transform
      - transform-origin
      - transform-style：`flat|preserve-3d`
      - perspective：`none | <length>`
      - perspective-origin
      - backface-visibility -- 定义当元素不面向屏幕时是否可见。如果在旋转元素不希望看到其背面时，该属性很有用。
- 9. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
+ 10. CSS Transitions -- http://www.w3.org/TR/css3-transitions/
      - transition: `<property> <duration> <animation type> <delay>`
      - transition-property -- 作用的属性
      - transition-duration -- 持续时间
      - transition-timing-function
      - transition-delay -- 延迟
- 10. CSS Animations -- http://www.w3.org/TR/css3-animations/
+ 11. CSS Animations -- http://www.w3.org/TR/css3-animations/
      - animation
      - animation-name
      - animation-duration
@@ -93,16 +95,16 @@
      - animation-iteration-count
      - animation-direction
      - animation-play-state
- 11. CSS Basic User Interface Module Level 3 (CSS3 UI) -- http://www.w3.org/TR/css3-ui/
+ 12. CSS Basic User Interface Module Level 3 (CSS3 UI) -- http://www.w3.org/TR/css3-ui/
      - text-overflow
      - box-sizing: `content-box | padding-box | border-box`
- 12. CSS Fonts Module Level 3 -- http://www.w3.org/TR/css-fonts-3/
+ 13. CSS Fonts Module Level 3 -- http://www.w3.org/TR/css-fonts-3/
      - @font-face: download font url
          - http://www.google.com/webfonts
          - http://www.dafont.com/
          - http://www.fontsquirrel.com/tools/webfont-generator -- 字体转换工具
          - http://www.youziku.com/ -- 有字库 中文字体转换 @font-face
- 13. CSS Multi-column Layout Module -- http://www.w3.org/TR/css3-multicol/
+ 14. CSS Multi-column Layout Module -- http://www.w3.org/TR/css3-multicol/
      - column-count
      - column-width
      - column-gap: 列间隔
@@ -111,8 +113,8 @@
      - column-rule-style
      - column-rule-width
      - column-span: 跨列显示
- 14. Media Queries -- http://www.w3.org/TR/css3-mediaqueries/
- 15. Filter Effects Module Level 1 -- http://www.w3.org/TR/filter-effects-1/
+ 15. Media Queries -- http://www.w3.org/TR/css3-mediaqueries/
+ 16. Filter Effects Module Level 1 -- http://www.w3.org/TR/filter-effects-1/
      - filter：`none | <filter-function-list>`
          - grayscale 灰度
          - sepia 褐色
@@ -125,18 +127,18 @@
          - blur 模糊
          - drop-shadow 阴影
      - filter():  `filter([ <image> | <string> ], <filter-function-list>)`
- 16. Filter Effects Module Level 2 -- https://drafts.fxtf.org/filters-2/
+ 17. Filter Effects Module Level 2 -- https://drafts.fxtf.org/filters-2/
      - backdrop-filter: `none | <filter-function-list>`, 与 filter 属性类似，但是 filter 属性会直接影响其后代所有元素，而 backdrop-filter 只针对元素背景做特效。
- 17. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
+ 18. CSS Values and Units Module Level 3 -- http://www.w3.org/TR/css3-values/
      - calc() -- calculate(计算)
      - vh -- (viewport height)/100
      - vw -- (viewport width)/100
      - vmin -- ((viewport height) > (viewport width) ? (viewport width) : (viewport height))/100
      - vmax -- ((viewport height) < (viewport width) ? (viewport width) : (viewport height))/100
- 18. CSS Conditional Rules Module Level 3 -- http://www.w3.org/TR/css3-conditional/
+ 19. CSS Conditional Rules Module Level 3 -- http://www.w3.org/TR/css3-conditional/
      - @supports 
      - @media
- 19. CSS Grid Layout Module Level 1 -- http://www.w3.org/TR/css-grid-1/
+ 20. CSS Grid Layout Module Level 1 -- http://www.w3.org/TR/css-grid-1/
      - grid-template-columns
      - grid-template-rows
      - grid-template-areas
@@ -144,25 +146,25 @@
      - grid-row
      - grid-area
      - grid-auto-flow
- 20. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
+ 21. CSS Masking Module Level 1 -- http://www.w3.org/TR/css-masking-1/
      - clip-path
      - mask
      - mask-type: `luminance | alpha`
      - mask-image
      - mask-border
- 21. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
+ 22. Compositing and Blending Level 1 -- http://www.w3.org/TR/compositing-1/
      - mix-blend-mode: `normal | multiply | screen | overlay | darken | lighten | color-dodge |color-burn | hard-light | soft-light | difference | exclusion | hue | 
 saturation | color | luminosity`
- 22. Pointer Events -- http://www.w3.org/TR/pointerevents/
+ 23. Pointer Events -- http://www.w3.org/TR/pointerevents/
      - touch-action: `auto | none | [ pan-x || pan-y ] | manipulation`
- 23. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
+ 24. CSS Will Change Module Level 1 -- http://www.w3.org/TR/css-will-change-1/
      - will-change
- 24. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
+ 25. CSS Shapes Module Level 1 -- http://www.w3.org/TR/css-shapes-1/
      - shape-outside -- 让文本围在图形外
      - shape-margin -- 使用 shape-outside 时，文字与图片的 margin
- 25. CSS Cascading and Inheritance Level 3 -- http://www.w3.org/TR/css-cascade-3/
+ 26. CSS Cascading and Inheritance Level 3 -- http://www.w3.org/TR/css-cascade-3/
      - all
- 26. CSS Custom Properties for Cascading Variables Module Level 1 -- http://www.w3.org/TR/css-variables/
+ 27. CSS Custom Properties for Cascading Variables Module Level 1 -- http://www.w3.org/TR/css-variables/
      - `--*` -- 自定义属性例如：`--custom-property-name`
      - var() -- `var( <custom-property-name> [, <any-value> ]? )`
 

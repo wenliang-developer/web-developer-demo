@@ -21,6 +21,6 @@
   var deltaX = w / 2 + offsetX;
   var deltaY = h / 2 + offsetY;
   
-  // calculate size
+  // calculate radius     c^2 = a^2 + c^2 -2*a*b*cos(A)
   var radius = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2) - 2 * deltaX * deltaY * Math.cos(90 / 180 * Math.PI));
 ```

@@ -1,0 +1,22 @@
+//斜切角
+@mixin beveled-corners($bg, $tl:0, $tr:$tl, $br:$tl, $bl:$tr) {
+    background: $bg;
+    background: linear-gradient(135deg, transparent $tl, $bg 0) top left,
+                linear-gradient(225deg, transparent $tr, $bg 0) top right,
+                linear-gradient(-45deg, transparent $br, $bg 0) bottom right,
+                linear-gradient(45deg, transparent $bl, $bg 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+//圆内角
+@mixin round-corners($bg, $tl:0, $tr:$tl, $br:$tl, $bl:$tr) {
+    background: $bg;
+    background: radial-gradient(circle at top left, transparent 15px, $tl 0) top left,
+	            radial-gradient(circle at top right, transparent 15px, $tr 0) top right,
+	            radial-gradient(circle at bottom right, transparent 15px, $br 0) bottom right,
+	            radial-gradient(circle at bottom left, transparent 15px, $bl 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+	
+}

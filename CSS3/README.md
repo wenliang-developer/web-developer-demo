@@ -138,6 +138,7 @@
  19. CSS Conditional Rules Module Level 3 -- http://www.w3.org/TR/css3-conditional/
      - @supports 
      - @media
+     - CSS.supports()
  20. CSS Grid Layout Module Level 1 -- http://www.w3.org/TR/css-grid-1/
      - grid-template-columns
      - grid-template-rows

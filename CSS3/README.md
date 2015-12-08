@@ -170,6 +170,7 @@ saturation | color | luminosity`
      - var() -- `var( <custom-property-name> [, <any-value> ]? )`
  28. Motion Path Module Level 1 -- http://www.w3.org/TR/motion-1/
      - motion-path
+     - motion-rotation
 
 
 ## 扩展阅读

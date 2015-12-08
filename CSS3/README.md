@@ -167,6 +167,8 @@ saturation | color | luminosity`
  27. CSS Custom Properties for Cascading Variables Module Level 1 -- http://www.w3.org/TR/css-variables/
      - `--*` -- 自定义属性例如：`--custom-property-name`
      - var() -- `var( <custom-property-name> [, <any-value> ]? )`
+ 28. Motion Path Module Level 1 -- http://www.w3.org/TR/motion-1/
+     - motion-path
 
 
 ## 扩展阅读

@@ -171,7 +171,9 @@ saturation | color | luminosity`
  28. Motion Path Module Level 1 -- http://www.w3.org/TR/motion-1/
      - motion-path
      - motion-rotation
-
+ 29. CSS Scoping Module Level -- http://www.w3.org/TR/css-scoping-1/
+     - :host or :host(selector) - 选择 shadow DOM 的宿主元素。
+     - :host-context(selector) - 选择 shadow DOM 的宿主元素的祖先元素。
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

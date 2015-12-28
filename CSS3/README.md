@@ -174,6 +174,9 @@ saturation | color | luminosity`
  29. CSS Scoping Module Level -- http://www.w3.org/TR/css-scoping-1/
      - :host or :host(selector) - 选择 shadow DOM 的宿主元素。
      - :host-context(selector) - 选择 shadow DOM 的宿主元素的祖先元素。
+     - ::content - 为通过 `<content>` 添加的**分布节点**添加样式。
+     - ::shadow - 重写 shadow DOM 的样式，只能穿透一层 shadow tree。
+     - /deep/ - 重写 shadow DOM 的样式，穿透多次层 shadow tree。
 
 ## 扩展阅读
  - [Wikipedia - CSS][2] —— `CSS` 相关介绍。

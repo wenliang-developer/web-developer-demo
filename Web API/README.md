@@ -2,3 +2,4 @@
 - Web Animations API -- http://w3c.github.io/web-animations/
 - Push API -- http://www.w3.org/TR/push-api/
 - User Timing API -- http://www.w3.org/TR/user-timing/
+- CSSOM View Module -- https://www.w3.org/TR/cssom-view/

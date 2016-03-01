@@ -12,6 +12,8 @@
 
  1. CSS Reflections -- https://www.webkit.org/blog/182/css-reflections/
      - box-reflect -- `-webkit-box-reflect: <direction> <offset> <mask-box-image>`
+ 2. CSS Basic User Interface Module Level 4 -- https://drafts.csswg.org/css-ui-4/
+     - appearance -- 更改元素外观
 
 ##以下是 W3C 各模块相关规范：
 

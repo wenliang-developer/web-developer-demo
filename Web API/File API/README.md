@@ -112,6 +112,7 @@ if (file) {
  - item(index):
 返回 FileList 中指定 index 的 File 对象，如果 FileList 在指定的 index 没有 File 对象，则该方法返回 null。
 `index` 表示 FileList 对象中 File 对象的位置，其中 0 代表第一个文件。FileList 还支持属性索引，范围是 0 到 小于 1 的数字，如果没有 File 对象，就没有该属性索引。
+
 > **Note:**
     HTMLInputElement interface 有一个只读类型的 FileList 属性，这也正是在上面的代码示例中看到的。 包含只读类型的 FileList 属性的其他接口，还包括 DataTransfer interface。
 

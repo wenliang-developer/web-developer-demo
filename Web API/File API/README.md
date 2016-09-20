@@ -362,6 +362,7 @@ FileReader interface 提供了三种异步读取方法：readAsArrayBuffer、rea
 此规范说明了一个正在运行的读取方法如何取得进度通知。FileReader 对象取其每 50ms 或每个字节读入内存中的一个最频繁的时间，将一个 progress 事件加入任务队列中。至少有一个 progress 事件在 load 之前触发，并在读取操作 100% 时完成读取操作。如果 blob 100%读入内存的时间小于 50ms，User agents 必须触发一个 progress 事件。
 
 以下是 FileReader 可能触发的 event。
+
 | Event name |   Interface   | 什么时候触发 |
 | ---------- | ------------- | ------------ |
 | loadstart  | ProgressEvent | 当开始读取时触发 |

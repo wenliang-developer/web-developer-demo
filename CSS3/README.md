@@ -17,14 +17,14 @@
 
 <img src="./images/CSS3_taxonomy_and_status_by_Sergey_Mavrody.svg.png" style="max-width:100%"/>
 
-##非 w3c 标准：
+## 非 w3c 标准：
 
  1. CSS Reflections -- https://www.webkit.org/blog/182/css-reflections/
      - box-reflect -- `-webkit-box-reflect: <direction> <offset> <mask-box-image>`
  2. CSS Basic User Interface Module Level 4 -- https://drafts.csswg.org/css-ui-4/
      - appearance -- 更改元素外观
 
-##以下是 W3C 各模块相关规范：
+## 以下是 W3C 各模块相关规范：
 
  1. Selector (选择器) -- http://www.w3.org/TR/css3-selectors/
  2. CSS Flexible Box Layout Module Level 1 -- http://www.w3.org/TR/css-flexbox-1/

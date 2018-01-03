@@ -91,7 +91,7 @@ interface PositionOptions {
 var isSupportGeolocation = navigator.geolocation ? true : false;
 ```
 ## 位置信息请求
-### 1.单词定位请求
+### 1.单次定位请求
 ```
 void getCurrentPosition(PositionCallback successCallback,
                            optional PositionErrorCallback errorCallback,

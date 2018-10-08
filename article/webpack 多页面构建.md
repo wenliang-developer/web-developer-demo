@@ -394,9 +394,11 @@ chunks.forEach(function(pathname) {
 4. [【AlloyTeam优化系列】构建篇](http://www.alloyteam.com/2015/10/optimization-of-alloyteam-series-building-articles/)
 
 **webpack react generator**
+
 5. [generator-react-webpack](https://github.com/stylesuxx/generator-react-webpack)
 
 **webpack 构建优化**
+
 6. [开发工具心得：如何 10 倍提高你的 Webpack 构建效率](https://segmentfault.com/a/1190000005770042)
 7. [webpack使用优化（基本篇）](https://github.com/lcxfs1991/blog/issues/2)
 8. [webpack使用优化（react篇）](https://github.com/lcxfs1991/blog/issues/7)
@@ -404,18 +406,22 @@ chunks.forEach(function(pathname) {
 10. https://zhuanlan.zhihu.com/p/21748318
 
 **webpack-dev-server**
+
 11. [webpack-dev-server使用方法](https://segmentfault.com/a/1190000006670084)
 12. [WEBPACK DEV SERVER](https://webpack.github.io/docs/webpack-dev-server.html)
 
 **多入口以及code-splitting**
+
 13. [webpack multiple-entry-points example](https://github.com/webpack/webpack/tree/master/examples/multiple-entry-points)
 14. [MULTIPLE ENTRY POINTS](https://webpack.github.io/docs/multiple-entry-points.html)
 15. [CODE SPLITTING](https://webpack.github.io/docs/code-splitting.html)
 
 **webpack 配置**
+
 16.[详解前端模块化工具-Webpack](https://github.com/dwqs/blog/issues/21) **不错的文章**
 17. [【翻译】Webpack——令人困惑的地方](https://github.com/chemdemo/chemdemo.github.io/issues/13)**好文章**
 
 **webpack CommonsChunkPlugin详细教程**
+
 18.[webpack CommonsChunkPlugin详细教程](https://segmentfault.com/a/1190000006808865)
 

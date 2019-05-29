@@ -25,6 +25,7 @@ Firefox for Android | 33+
 websocket 协议有多个版本，以最新版的 `RFC 6455` 为例。
 
 From client to server:
+```
 > GET / HTTP/1.1
 Upgrade: websocket
 Connection: Upgrade
@@ -32,14 +33,17 @@ Host: example.com
 Origin: null
 Sec-WebSocket-Key: sN9cRrP/n9NdMgdcy2VJFQ==
 Sec-WebSocket-Version: 13
+```
 
 From server to client:
+```
 > HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
 Sec-WebSocket-Accept: fFBooB7FAkLlXgRSz0BT3v4hq5s=
 Sec-WebSocket-Origin: null
 Sec-WebSocket-Location: ws://example.com/
+```
 
 
 **Sec-WebSocket-Accept 生成原理**

@@ -26,7 +26,7 @@ cd learn-lerna
 
 ## 初始化项目
 
-````
+```
 lerna init
 
 .

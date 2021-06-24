@@ -36,6 +36,7 @@ lerna init
 ```
 
 lerna会自动创建一个packages目录夹，我们以后的项目都新建在这里面。同时还会在根目录新建一个lerna.json配置文件
+
 ```
 {
   "packages": [
@@ -44,8 +45,10 @@ lerna会自动创建一个packages目录夹，我们以后的项目都新建在�
   "version": "0.0.0" // 共用的版本，由lerna管理
 }
 ```
+
 ## 创建package
 我们创建两个package:
+
 ```
 cd packages
 mkdir prpr-lerna-core
@@ -56,11 +59,13 @@ mkdir prpr-lerna-popular
 cd prpr-lerna-popular
 npm init -y
 ```
+
 注意：这两个package我们最后都是要发布到npm上的，所以名字请取特殊些，不能被人用过
 
 ## 添加依赖
 prpr-lerna-popular依赖prpr-lerna-core，这时有两种方法添加依赖：
 第一种方法是修改prpr-lerna-popular/package.json，添加
+
 ```
 {
   "dependencies": {
@@ -68,13 +73,16 @@ prpr-lerna-popular依赖prpr-lerna-core，这时有两种方法添加依赖：
   }
 }
 ```
+
 然后运行lerna bootstrap
 第二种方法是直接使用命令add
 
 ```
 lerna add prpr-lerna-core --scope=prpr-lerna-popular
 ```
+
 运行之后，我们发现prpr-lerna-popular生成了node_modules，而node_modules里生成了指向prpr-lerna-core的软链，类似npm link的效果:
+
 ```
 .
 ├── packages
@@ -87,6 +95,7 @@ lerna add prpr-lerna-core --scope=prpr-lerna-popular
 ├── package.json
 └── README.md
 ````
+
 新建prpr-lerna-core/index.js
 
 ```
@@ -96,12 +105,15 @@ module.exports = {
   API
 }
 ```
+
 prpr-lerna-popular除了依赖prpr-lerna-core，还可以依赖其他开源的库，比如我们使用axios
 
 ```
 lerna add axios --scope=prpr-lerna-popular
 ```
+
 新建prpr-lerna-popular/index.js
+
 ```
 const { API } = require('prpr-lerna-core');
 const axios = require('axios');
@@ -113,23 +125,30 @@ module.exports = getPopularImg;
 // 测试代码，发布时删除
 getPopularImg().then((res) => console.log(res.data.length));
 ```
+
 测试一下: node packages/prpr-lerna-popular/index.js 正常情况下可以输出结果
 
 ## 发布到npm
 首先把所有的代码提交
+
 ```
 cd learn-lerna
 git add .
 git commit -m "test publish"
 ```
+
 注册一个npmjs账户
+
 ```
 npm login
 ```
+
 登入你的账户，如果本地npm是淘宝镜像，一定要换回https://registry.npmjs.org/地址！！！
+
 ```
 lerna publish
 ```
+
 运行publish，选择发布的版本号
 lerna可以帮我们管理版本号，非常方便!
 
@@ -142,6 +161,7 @@ lerna add prpr-lerna-core --scope=prpr-lerna-popular #给包prpr-lerna-popularx�
 lerna list
 lerna clean
 ```
+
 ## 其他事项
 - lerna默认使用的是集中版本，所有的package共用一个version。如果希望不同的package拥有自己的版本，可以使用Independent模式
 - 发布package的名字如果是以@开头的，例如@deepred/core，npm默认以为是私人发布，需要使用npm publish --access public发布。但是lerna publish不支持该参数，解决方法参考: [issues](https://github.com/lerna/lerna/issues/914)

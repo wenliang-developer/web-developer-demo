@@ -12,17 +12,20 @@
 本文主要介绍下lerna的使用.
 
 ## 全局安装lerna
+
 ```
 npm i lerna -g
 ```
 
 lerna是基于git的，在github上新建一个项目learn-lerna
+
 ```
 git clone git@github.com:deepred5/learn-lerna.git
 cd learn-lerna
 ```
 
 ## 初始化项目
+
 ````
 lerna init
 

@@ -152,6 +152,15 @@ npm login
 lerna publish
 ```
 
+运行该命令会执行如下的步骤：
+
+1. 运行lerna updated来决定哪一个包需要被publish
+2. 如果有必要，将会更新lerna.json中的version
+3. 将所有更新过的的包中的package.json的version字段更新
+4. 将所有更新过的包中的依赖更新
+5. 为新版本创建一个git commit或tag
+6. 将包publish到npm上
+
 运行publish，选择发布的版本号
 lerna可以帮我们管理版本号，非常方便!
 

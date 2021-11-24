@@ -172,6 +172,10 @@ lerna add axios #所有包都添加axios
 lerna add prpr-lerna-core --scope=prpr-lerna-popular #给包prpr-lerna-popularx添加prpr-lerna-core依赖
 lerna list
 lerna clean
+lerna updated/lerna diff #对包是否发生过变更
+lerna ls #显示packages下的各个package的version
+lerna clean #清理node_modules
+lerna run #运行npm script，可以指定具体的package
 ```
 
 ## 其他事项

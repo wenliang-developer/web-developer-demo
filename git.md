@@ -89,6 +89,8 @@ git remote remove origin
 #### 远程分支同步数据
 ```
 git fetch <remote>
+
+git fetch <remote-name> <remote-branch-name>:<local-branch-name>
 ```
 
 `git fetch` 和 `git pull` 区别：

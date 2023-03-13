@@ -101,6 +101,9 @@ git fetch <remote-name> <remote-branch-name>:<local-branch-name>
 #### 远程分支推送数据
 ```
 git push <remote> <localBranch:originBranch>
+
+// 当本地分支 没有同名的远程分支，使用 --set-upstream 创建远程分支
+git push --set-upstream <remote> <localBranch> 
 ```
 
 #### 创建远程分支对应的本地分支

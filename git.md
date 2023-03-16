@@ -128,7 +128,7 @@ git checkout <branch> (branch 只存在于远程分支上)
 #### 当前本地分支 跟踪远程分支
 ```
 git branch -u <origin>/<branch>
-git branch --set-upstream-to <origin>/<branch>
+git branch --set-upstream-to <origin>/<branch> <localbranch>
 ```
 
 #### 查看跟踪分支
